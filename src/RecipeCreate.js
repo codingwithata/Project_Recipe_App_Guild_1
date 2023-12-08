@@ -57,7 +57,7 @@ function RecipeCreate({ setRecipes }) {
               <label>
                 <input
                   id="photo"
-                  type="text"
+                  type="url"
                   name="photo"
                   onChange={handleChange}
                   value={formData.photo}

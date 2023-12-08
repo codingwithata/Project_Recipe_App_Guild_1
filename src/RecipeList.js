@@ -4,7 +4,7 @@ function RecipeRow({ recipe, onDelete }) {
     <tr key={recipe.id}>
       <td>{recipe.name}</td>
       <td>{recipe.cuisine}</td>
-      <td>{recipe.photo}</td>
+      <td><img src={recipe.photo} alt={`Image`} /> </td>
       <td>{recipe.ingredients}</td>
       <td>{recipe.preparation}</td>
       <td>
@@ -17,9 +17,14 @@ function RecipeRow({ recipe, onDelete }) {
 }
 
 function RecipeList({ recipes, setRecipes }) {
-  const handleDelete = (id) => {
-    setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.id !== id));
-  };
+
+    const handleDelete = (index) => {
+      setRecipes((prevRecipes) => {
+        const updatedRecipes = [...prevRecipes];
+        updatedRecipes.splice(index, 1); // Remove the post at the specified index
+        return updatedRecipes;
+      });
+    }
 
   return (
     <div className="recipe-list">
