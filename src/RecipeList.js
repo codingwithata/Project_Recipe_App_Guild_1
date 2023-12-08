@@ -11,8 +11,6 @@ function RecipeList() {
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

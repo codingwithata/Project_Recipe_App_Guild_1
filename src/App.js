@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
       <RecipeList />
-      <RecipeCreate />
+      <RecipeCreate recipes={recipes} />
     </div>
   );
 }
