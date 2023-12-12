@@ -1,15 +1,15 @@
 import React from "react";
 import RecipeRow from "./RecipeRow";
-import "./RecipeList.css"
-function RecipeList({ recipes, setRecipes }) {
+import "./RecipeList.css";
 
-    const handleDelete = (index) => {
-      setRecipes((prevRecipes) => {
-        const updatedRecipes = [...prevRecipes];
-        updatedRecipes.splice(index, 1); // Remove the post at the specified index
-        return updatedRecipes;
-      });
-    }
+function RecipeList({ recipes, setRecipes }) {
+  const handleDelete = (index) => {
+    setRecipes((prevRecipes) => {
+      const updatedRecipes = [...prevRecipes];
+      updatedRecipes.splice(index, 1);
+      return updatedRecipes;
+    });
+  };
 
   return (
     <div className="recipe-list">
@@ -25,8 +25,8 @@ function RecipeList({ recipes, setRecipes }) {
           </tr>
         </thead>
         <tbody>
-          {recipes.map((recipe) => (
-            <RecipeRow key={recipe.id} recipe={recipe} onDelete={handleDelete} />
+          {recipes.map((recipe, index) => (
+            <RecipeRow key={recipe.id} recipe={recipe} onDelete={() => handleDelete(index)} />
           ))}
         </tbody>
       </table>
